@@ -9,16 +9,14 @@ public class CatalogueClient {
 
     private final RestTemplate restTemplate;
     
-    @Value("${catalogue.service.url}")
-    private String catalogueServiceUrl;
-
+    
     public CatalogueClient(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
     public BookDTO getBookById(Long id) {
 
-        String url = catalogueServiceUrl + "/api/books/" + id;
+        String url = https://ms-books-catalogue-production-f085.up.railway.app + "/api/books/" + id;
 
         return restTemplate.getForObject(url, BookDTO.class);
     }
