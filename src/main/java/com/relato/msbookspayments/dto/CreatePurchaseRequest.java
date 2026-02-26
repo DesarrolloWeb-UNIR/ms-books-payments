@@ -25,4 +25,11 @@ public class CreatePurchaseRequest {
     public String getUserEmail() {
         return userEmail;
     }
+    public void setBookId(Long bookId) {
+    this.bookId = bookId;
+}
+
+public void setUserEmail(String userEmail) {
+    this.userEmail = userEmail;
+}
 }
