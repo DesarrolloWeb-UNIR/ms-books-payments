@@ -10,17 +10,20 @@ public class PurchaseResponseDTO {
     private Long bookId;
     private PurchaseStatus status;
     private LocalDateTime purchaseDate;
+    private BookDTO book;
 
     public PurchaseResponseDTO(
             Long id,
             Long bookId,
             PurchaseStatus status,
-            LocalDateTime purchaseDate
+            LocalDateTime purchaseDate,
+            BookDTO book
     ) {
         this.id = id;
         this.bookId = bookId;
         this.status = status;
         this.purchaseDate = purchaseDate;
+        this.book = book;
     }
 
     public Long getId() {
@@ -37,5 +40,8 @@ public class PurchaseResponseDTO {
 
     public LocalDateTime getPurchaseDate() {
         return purchaseDate;
+    }
+    public BookDTO getBook() {
+        return book;
     }
 }

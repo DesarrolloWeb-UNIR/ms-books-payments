@@ -16,7 +16,7 @@ public class DataLoader {
                     "usuario@relato.com"
             );
 
-            purchaseRepository.save(purchase);
+            //purchaseRepository.save(purchase);
 
             System.out.println("✅ Compra guardada con ID: " + purchase.getId());
         };

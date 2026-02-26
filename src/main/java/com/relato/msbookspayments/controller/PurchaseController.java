@@ -2,6 +2,7 @@ package com.relato.msbookspayments.controller;
 
 import com.relato.msbookspayments.dto.CreatePurchaseRequest;
 import com.relato.msbookspayments.dto.PurchaseResponseDTO;
+import com.relato.msbookspayments.entity.Purchase;
 import com.relato.msbookspayments.service.PurchaseService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -31,7 +32,11 @@ public class PurchaseController {
     public List<PurchaseResponseDTO> getAllPurchases() {
         return purchaseService.getAllPurchases();
     }
-
+    // GET /api/purchases/{id}
+    @GetMapping("/{id}")
+    public Purchase getById(@PathVariable Long id) {
+        return purchaseService.findPurchase(id);
+    }
     @PutMapping("/{id}/confirm")
     public PurchaseResponseDTO confirmPurchase(@PathVariable Long id) {
         return purchaseService.confirmPurchase(id);
