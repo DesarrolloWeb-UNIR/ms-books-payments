@@ -8,6 +8,9 @@ import org.springframework.web.client.RestTemplate;
 public class CatalogueClient {
 
     private final RestTemplate restTemplate;
+    
+    @Value("${catalogue.service.url}")
+    private String catalogueServiceUrl;
 
     public CatalogueClient(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -15,7 +18,7 @@ public class CatalogueClient {
 
     public BookDTO getBookById(Long id) {
 
-        String url = "http://ms-books-catalogue/api/books/" + id;
+        String url = catalogueServiceUrl + "/api/books/" + id;
 
         return restTemplate.getForObject(url, BookDTO.class);
     }
