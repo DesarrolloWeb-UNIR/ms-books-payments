@@ -16,7 +16,7 @@ public class CatalogueClient {
 
     public BookDTO getBookById(Long id) {
 
-        String url = "https://ms-books-catalogue-production-f085.up.railway.app" + "/api/books/" + id;
+        String url = "https://ms-api-gateway-production-7db9.up.railway.app/catalogue" + "/api/books/" + id;
 
         return restTemplate.getForObject(url, BookDTO.class);
     }
